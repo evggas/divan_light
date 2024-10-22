@@ -10,9 +10,9 @@ class DivanSpider(scrapy.Spider):
 
         for product in products:
             yield {
-                'name': product.css("div.lsooF span::text").get(),
-                'price': product.css("div.pY3d2::text").get(),
-                "url": product.css("a").attrib ["href"]
+             "name" : product.css("div.lsooF span::text").get(), # ищем название класса для блока в коде странице на сайте, а потом тег
+             "price": product.css("div.pY3d2 span::text").get(),
+             "url": product.css("a").attrib ["href"]
             }
 
         # Пагинация, если есть ссылки на следующие страницы
