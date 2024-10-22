@@ -19,4 +19,4 @@ class DivanSpider(scrapy.Spider):
         next_page = response.css('a.pagination-next::attr(href)').get()
         if next_page is not None:
            yield response.follow(next_page, self.parse)
-#scrapy crawl divan_spider -o lights.json
+#scrapy crawl divan_spider -o lights.csv
